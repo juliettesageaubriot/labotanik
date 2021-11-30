@@ -1,9 +1,14 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
+import NavigationProvider from '@components/context/NavigationProvider';
 
 import '@assets/basic.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <NavigationProvider>
+      <Component {...pageProps} />
+    </NavigationProvider>
+  )
 }
 
 

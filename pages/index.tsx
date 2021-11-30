@@ -1,7 +1,14 @@
+import React, { useContext } from "react";
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import { NavigationContext } from "@components/context/NavigationProvider";
+
 const Home: NextPage = () => {
+  const { step, onChangeStep } = useContext(NavigationContext);
+
+  console.log("------ step ------", step)
+
   return (
     <>
       <Head>
