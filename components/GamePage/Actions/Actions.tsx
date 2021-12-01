@@ -1,51 +1,63 @@
 import React, { useContext } from "react";
 import { NavigationContext } from "@components/Context/NavigationProvider";
+import { choicesData } from "@data/choicesData";
+
+import Action1 from "./Action1";
+import Action2 from "./Action2";
+import Action3 from "./Action3";
+import Action4 from "./Action4";
 
 import styles from './styles.module.scss';
 
-interface IActions {}
+interface IActions { }
 
-const Actions = ({  }: IActions) => {
-    const { step, setStep, choices, setChoices } = useContext(NavigationContext);
+const Actions = ({ }: IActions) => {
+    const { step, setStep, choices, setChoices, state, setState } = useContext(NavigationContext);
 
-    const arr = [
-        {
-            val1: "serum 1-1",
-            val2: "serum 1-2"
-        },
-        {
-            val1: "serum 2-1",
-            val2: "serum 2-2"
-        },
-        {
-            val1: "serum 3-1",
-            val2: "serum 3-2"
-        },
-        {
-            val1: "serum 4-1",
-            val2: "serum 4-2"
-        },
-    ]
-
-    const handleClick = (val: string) => {
+    const handleChoice = (val: any) => {
         let newArr = [...choices]
         newArr.push(val)
-        console.log(newArr)
         setChoices(newArr)
+
+        setState("RESULT")
+    }
+
+    const handleStartChoice = () => {
+        setState("CHOICE")
     }
 
     return (
-        <div className={styles["actions_container"]}>
+        <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
             je suis le container des actions
-            <br/><br/>
+            <br /><br />
             current step : {step}
-            <br/><br/>
-            choices : {0 < choices.length && choices.map((i) => i + ', ')}
-            <br/><br/>
-            <button onClick={() => handleClick(arr[step].val1)}>{arr[step].val1}</button>
-            <button onClick={() => handleClick(arr[step].val2)}>{arr[step].val2}</button>
-            <br/><br/>
-            <button onClick={() => setStep(step + 1)}>next step</button>
+            <br /><br />
+            choices : {0 < choices.length && choices.map((i) => i.title + ', ')}
+            <br /><br />
+
+
+            {"RULE" === state &&
+                <div>
+                    <b>{choicesData[step].order}</b>
+                    <button onClick={() => handleStartChoice()}>faire mon choix</button>
+                </div>
+            }
+
+            {("CHOICE" === state && 0 === step) &&
+                <Action1 handleChoice={handleChoice} />
+            }
+
+            {("CHOICE" === state && 1 === step) &&
+                <Action2 handleChoice={handleChoice} />
+            }
+
+            {("CHOICE" === state && 2 === step) &&
+                <Action3 handleChoice={handleChoice} />
+            }
+
+            {("CHOICE" === state && 3 === step) &&
+                <Action4 handleChoice={handleChoice} />
+            }
         </div>
     )
 }

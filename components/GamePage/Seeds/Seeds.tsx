@@ -6,14 +6,14 @@ import styles from './styles.module.scss';
 interface ISeeds { }
 
 const Seeds = ({ }: ISeeds) => {
-    const { choices } = useContext(NavigationContext);
+    const { choices, state } = useContext(NavigationContext);
 
 
     return (
-        <div className={styles["seeds_container"]}>
+        <div className={`${styles["seeds_container"]} ${"RESULT" !== state ? styles.disabled : ''}`}>
             je suis le container des Seeds
 
-            {choices.map((i:number, idx:number) => <div key={idx}>je suis la seed combinée de l'étape {idx + 1}, avec le choix {i}</div>)}
+            {choices.map((i:any, idx:number) => <div key={idx}>je suis la seed combinée de l'étape {idx}, avec le choix {i.title}</div>)}
 
         </div>
     )
