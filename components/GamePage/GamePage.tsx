@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavigationContext } from "@components/Test/NavigationProvider";
+import { NavigationContext } from "@components/Context/NavigationProvider";
 import Seeds from "@components/Seeds/Seeds";
 import Actions from "@components/Actions/Actions";
 import Results from "@components/Results/Results";
