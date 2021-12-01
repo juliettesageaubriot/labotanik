@@ -2,11 +2,9 @@ import React from "react";
 
 import styles from './styles.module.scss';
 
-interface IResults {
-    title?: string;
-}
+interface IResults {}
 
-const Results = ({ title }: IResults) => (
+const Results = ({ }: IResults) => (
     <div className={styles["results_container"]}>
         je suis le container des Results
     </div>

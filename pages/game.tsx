@@ -4,7 +4,7 @@ import HeadTag from "@components/HeadTag/HeadTag";
 import GamePage from "@components/GamePage/GamePage";
 
 const Game = () => {
-    const { step, onChangeStep } = useContext(NavigationContext);
+    const { step, setStep } = useContext(NavigationContext);
 
     console.log("------ step ------", step)
 
