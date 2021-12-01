@@ -25,13 +25,14 @@ const HomePage = () => {
                 <a>commencer le jeu</a>
             </Link>
 
-            <Sound
+            {/* <Sound
                 soundUrl="/assets/sounds/cat.wav"
                 isPlaying={true}
                 isLooping={false}
                 mute={false}
                 volume={0.5}
-            />
+            /> */}
+            
         </div>
     )
 }
