@@ -5,13 +5,21 @@ export const NavigationContext = createContext({
   onChangeStep: (number: number) => { }, // changement d'étape du jeu
 
   userName: "", // nom du joueur
-  setUserName: (name: string) => { } // changement de nom du joueur
+  setUserName: (name: string) => { }, // changement de nom du joueur
+
+  soundGlobalVolume: 0.5, // volume global du jeu
+  onChangeSoundGlobalVolume: (volume: number) => { }, // changement global volume jeu
+
+  mutedGlobalVolume: false, // mute le sons global du jeu
+  setMutedGlobalVolume: (mute: boolean) => { } // set le mute
 
 });
 
 const NavigationProvider = (props: any) => {
   const [isStepState, setIsStepState] = useState<number>(0);
   const [isUserName, setIsUserName] = useState<string>("");
+  const [isSoundGlobalVolumeState, setIsSoundGlobalVolumeState] = useState<number>(0.5);
+  const [isMutedGlobalVolume, setIsMutedGlobalVolume] = useState<boolean>(false);
 
   return (
     <NavigationContext.Provider value={{
@@ -19,7 +27,13 @@ const NavigationProvider = (props: any) => {
       onChangeStep: (number: number) => setIsStepState(number),
 
       userName: isUserName,
-      setUserName: (name: string) => setIsUserName(name)
+      setUserName: (name: string) => setIsUserName(name),
+
+      soundGlobalVolume: isSoundGlobalVolumeState,
+      onChangeSoundGlobalVolume: (volume: number) => setIsSoundGlobalVolumeState(volume),
+
+      mutedGlobalVolume: isMutedGlobalVolume,
+      setMutedGlobalVolume: (mute: boolean) => setIsMutedGlobalVolume(mute),
 
     }}>
       {props.children}

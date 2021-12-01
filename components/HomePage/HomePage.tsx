@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { NavigationContext } from "@components/Context/NavigationProvider";
+import Sound from "@components/Sound/Sound";
+import SoundInputs from "@components/SoundInputs/SoundInputs";
 import Link from 'next/link';
 
 import styles from './styles.module.scss';
@@ -22,6 +24,14 @@ const HomePage = () => {
             <Link href="/game">
                 <a>commencer le jeu</a>
             </Link>
+
+            <Sound
+                soundUrl="/assets/sounds/cat.wav"
+                isPlaying={true}
+                isLooping={false}
+                mute={false}
+                volume={0.5}
+            />
         </div>
     )
 }

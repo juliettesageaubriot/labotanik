@@ -13,9 +13,8 @@
       ],
       "@data/*": [
         "./data/*"
-      ],
+      ]
     },
-
     "target": "es6",
     "lib": [
       "dom",
@@ -41,7 +40,8 @@
     "isolatedModules": true,
     // "incremental": false,
     "jsx": "preserve",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
