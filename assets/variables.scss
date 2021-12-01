@@ -1,0 +1,44 @@
+// $font-body: "Arial";
+// $font-title: "Arial";
+
+
+$ft-thin: 100;
+$ft-extralight: 200;
+$ft-light: 300;
+$ft-normal: 400;
+$ft-regular: normal;
+$ft-medium: 500;
+$ft-semibold: 600;
+$ft-bold: 700;
+$ft-extrabold: 800;
+$ft-black: 900;
+
+
+// colors
+
+
+$bp-smartphone-small: 320px;
+$bp-smartphone: 375px;
+$bp-smartphone-medium: 410px;
+$bp-smartphone-large: 480px;
+$bp-smartphone-xlarge: 680px;
+$bp-tablet: 768px;
+$bp-tablet-exlcude: 769px;
+$bp-tablet-large: 840px;
+$bp-desk-small: 960px;
+$bp-desk-medium: 1024px;
+$bp-desk-large: 1200px;
+$bp-desk-large-plus: 1340px;
+$bp-desk-large-intermediaire: 1440px;
+$bp-desk-xlarge: 1600px;
+$bp-desk-xxlarge: 1800px;
+$bp-desk-4k-small: 2220px;
+$bp-desk-4k-medium: 2620px;
+$bp-desk-4k-large: 3040px;
+$bp-desk-4k-xlarge: 3220px;
+$bp-desk-4k-xxlarge: 3620px;
+
+$bp-height-xsmall: 580px;
+$bp-height-small: 640px;
+$bp-height-medium: 768px;
+$bp-height-large: 900px;

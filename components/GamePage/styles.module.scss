@@ -1,0 +1,15 @@
+.game_container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 100vh;
+
+    .left {
+        width: 55%;
+    }
+
+    .right {
+        width: 45%;
+    }
+}
