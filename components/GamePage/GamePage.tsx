@@ -7,9 +7,6 @@ import Results from "@components/GamePage/Results/Results";
 import styles from './styles.module.scss';
 
 const GamePage = () => {
-    const { step, setStep } = useContext(NavigationContext);
-
-    console.log("------ step ------", step)
 
     return (
         <div className={styles["game_container"]}>
