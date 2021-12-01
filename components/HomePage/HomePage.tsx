@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { NavigationContext } from "@components/Context/NavigationProvider";
+import { NavigationContext } from "@components/Test/NavigationProvider";
 import Link from 'next/link';
 
 import styles from './styles.module.scss';

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavigationContext } from "@components/Context/NavigationProvider";
+import { NavigationContext } from "@components/Test/NavigationProvider";
 import HeadTag from "@components/HeadTag/HeadTag";
 import GamePage from "@components/GamePage/GamePage";
 
