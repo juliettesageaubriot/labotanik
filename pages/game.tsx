@@ -5,7 +5,7 @@ import GamePage from "@components/GamePage/GamePage";
 import Layout from "@components/Layout/Layout";
 
 const Game = () => {
-    const { step, onChangeStep } = useContext(NavigationContext);
+    const { step, setStep } = useContext(NavigationContext);
 
     console.log("------ step ------", step)
 

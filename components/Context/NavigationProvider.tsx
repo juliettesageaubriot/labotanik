@@ -2,7 +2,10 @@ import React, { createContext, useState } from "react";
 
 export const NavigationContext = createContext({
   step: 0, // étape du jeu
-  onChangeStep: (number: number) => { }, // changement d'étape du jeu
+  setStep: (number: number) => { }, // changement d'étape du jeu
+
+  choices: [],
+  setChoices: (choice: string[]) => { },
 
   userName: "", // nom du joueur
   setUserName: (name: string) => { }, // changement de nom du joueur
@@ -17,6 +20,7 @@ export const NavigationContext = createContext({
 
 const NavigationProvider = (props: any) => {
   const [isStepState, setIsStepState] = useState<number>(0);
+  const [isChoices, setIsChoices] = useState<string[]>([]);
   const [isUserName, setIsUserName] = useState<string>("");
   const [isSoundGlobalVolumeState, setIsSoundGlobalVolumeState] = useState<number>(0.5);
   const [isMutedGlobalVolume, setIsMutedGlobalVolume] = useState<boolean>(false);
@@ -24,7 +28,10 @@ const NavigationProvider = (props: any) => {
   return (
     <NavigationContext.Provider value={{
       step: isStepState,
-      onChangeStep: (number: number) => setIsStepState(number),
+      setStep: (number: number) => setIsStepState(number),
+
+      choices: isChoices,
+      setChoices: (choice: string[]) => setIsChoices(choice),
 
       userName: isUserName,
       setUserName: (name: string) => setIsUserName(name),
@@ -36,10 +43,9 @@ const NavigationProvider = (props: any) => {
       setMutedGlobalVolume: (mute: boolean) => setIsMutedGlobalVolume(mute),
 
     }}>
-      {props.children}
+        {props.children}
     </NavigationContext.Provider>
   )
 }
-
 
 export default NavigationProvider;
