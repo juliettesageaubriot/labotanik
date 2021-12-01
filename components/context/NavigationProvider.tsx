@@ -1,17 +1,24 @@
 import React, { createContext, useState } from "react";
 
 export const NavigationContext = createContext({
-  step: 0,
-  onChangeStep: (number: number) => { }
+  step: 0, // étape du jeu
+  userName: "", // nom du joueur
+  
+  onChangeStep: (number: number) => { }, // changement d'étape du jeu
+  onChangeUserName: (name: string) => { } // changement de nom du joueur
 });
 
 const NavigationProvider = (props: any) => {
-  const [stepState, setStepState] = useState(0);
+  const [isStepState, setIsStepState] = useState<number>(0);
+  const [isUserName, setIsUserName] = useState<string>("");
 
   return (
     <NavigationContext.Provider value={{
-      step: stepState,
-      onChangeStep: (number: number) => setStepState(number),
+      step: isStepState,
+      onChangeStep: (number: number) => setIsStepState(number),
+
+      userName: isUserName,
+      onChangeUserName: (name:string) => setIsUserName(name)
 
     }}>
       {props.children}
