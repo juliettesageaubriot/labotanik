@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavigationContext } from "@components/context/NavigationProvider";
+import { NavigationContext } from "@components/Context/NavigationProvider";
 import HeadTag from "@components/HeadTag/HeadTag";
 import Link from 'next/link';
 
