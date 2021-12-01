@@ -1,5 +1,10 @@
 .actions_container {
     width: 100%;
     height: 60%;
-    border: 1px solid red;
+    background-color: lightskyblue;
+
+    &.disabled {
+        filter: grayscale(100%);
+        pointer-events: none;
+    }
 }
