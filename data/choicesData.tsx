@@ -8,14 +8,14 @@ export const choicesData = [
             img: "/assets/img/purificatilium.svg",
             seedAnimId: "seed1",
             triggerAnims: ["cat-died", "plants-1"],
-            triggerSounds: [""],
+            triggerSounds: ["cat-died"],
         },
         secondChoice: {
             id: "boostyflos",
             img: "/assets/img/boostyflos.svg",
             seedAnimId: "seed1",
             triggerAnims: ["cat-died", "plants-1"],
-            triggerSounds: [""],
+            triggerSounds: ["cat-died"],
         }
     },
     {

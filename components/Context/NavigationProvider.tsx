@@ -22,6 +22,9 @@ export const NavigationContext = createContext({
   animationsRef: [],
   setAnimationsRef: (animRef: any) => { },
 
+  soundsRef: [],
+  setSoundsRef: (soundsRef: any) => { },
+
   timer: 10,
   setTimer: (timer: number) => { }
 
@@ -35,6 +38,7 @@ const NavigationProvider = (props: any) => {
   const [isSoundGlobalVolumeState, setIsSoundGlobalVolumeState] = useState<number>(0.5);
   const [isMutedGlobalVolume, setIsMutedGlobalVolume] = useState<boolean>(false);
   const [isAnimationsRef, setIsAnimationsRef] = useState<[]>([]);
+  const [isSoundsRef, setIsSoundsRef] = useState<[]>([]);
   const [isTimer, setIsTimer] = useState<number>(10)
 
   return (
@@ -59,6 +63,9 @@ const NavigationProvider = (props: any) => {
 
       animationsRef: isAnimationsRef,
       setAnimationsRef: (animRef: []) => setIsAnimationsRef(animRef),
+
+      soundsRef: isSoundsRef,
+      setSoundsRef: (soundRef: []) => setIsSoundsRef(soundRef),
 
       timer: isTimer,
       setTimer: (timer:number) => setIsTimer(timer)

@@ -4,7 +4,7 @@ import { NavigationContext } from "@components/Context/NavigationProvider";
 import ReactHowler from 'react-howler'
 
 interface ISound {
-    soundUrl: string,
+    soundUrl: any,
     isPlaying: boolean,
     isLooping: boolean,
     mute: boolean,
@@ -13,7 +13,7 @@ interface ISound {
 
 const Sound = ({ soundUrl, isPlaying, isLooping, mute, volume }: ISound) => {
     const { mutedGlobalVolume, soundGlobalVolume } = useContext(NavigationContext);
-    
+
     return (
         <>
             <ReactHowler

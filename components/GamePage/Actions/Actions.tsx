@@ -1,6 +1,9 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { NavigationContext } from "@components/Context/NavigationProvider";
 import { choicesData } from "@data/choicesData";
+import { sounds } from "@data/sounds";
+
+import Sound from "@components/Sound/Sound"
 
 import Action1 from "./Action1";
 import Action2 from "./Action2";
@@ -12,12 +15,26 @@ import styles from './styles.module.scss';
 interface IActions { }
 
 const Actions = ({ }: IActions) => {
-    const { step, setStep, choices, setChoices, state, setState, animationsRef, timer } = useContext(NavigationContext);
+    const { step, setStep, choices, setChoices, state, setState, animationsRef, timer, soundsRef, setSoundsRef } = useContext(NavigationContext);
+
+
+    useEffect(() => {
+        if (0 === soundsRef.length) {
+            let soundsArr: any[] = []
+            sounds.map((sound) => {
+                soundsArr.push(sound)
+            })
+            setSoundsRef(soundsArr)
+        }
+    })
+
 
     const handleChoice = (val: any) => {
         let newArr = [...choices]
         newArr.push(val)
         setChoices(newArr)
+
+        console.log(val)
 
         val.triggerAnims.map((a: string) => {
             switch (a) {
@@ -47,8 +64,14 @@ const Actions = ({ }: IActions) => {
             }
         })
 
+
         val.triggerSounds.map((s: string) => {
             // TODO : play sound (look at anim above for example)
+
+            // let soundToPlay = soundsRef.find((i) => i.id === s)
+            // soundToPlay.play = true
+
+            // console.log(soundToPlay.play)
         })
 
         setState("RESULT")
@@ -63,8 +86,29 @@ const Actions = ({ }: IActions) => {
         setState("RULE")
     }
 
+    const Test = () => {
+        useEffect(() => {
+
+        }, [])
+    }
+
     return (
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
+
+            {/* {sounds?.map((sound: any, i: number) => {
+                console.log("----- maaaap -----", sound.play)
+                return (
+                    <Sound
+                        key={`sound-play-${sound.path}`}
+                        soundUrl={sound.path}
+                        isPlaying={sound.play}
+                        isLooping={sound.loop}
+                        mute={false}
+                    />
+                )
+            })
+            } */}
+
             <div className={styles.head_container}>
                 <div className={styles.title}>protocole technique</div>
                 <div className={styles.timer}>{1 === step ? (timer < 10 ? `0${timer}:00` : `${timer}:00`) : "00:00"}</div>
