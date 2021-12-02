@@ -10,7 +10,7 @@ interface IResults { }
 
 const Results = ({ }: IResults) => {
 
-    const { state, animationsRef, setAnimationsRef } = useContext(NavigationContext);
+    const { step, state, animationsRef, setAnimationsRef } = useContext(NavigationContext);
 
     // set up animations once
     useEffect(() => {
@@ -36,9 +36,12 @@ const Results = ({ }: IResults) => {
 
             <div className={styles.title}>real-time simulator</div>
 
-            <img className={styles.base} src="/assets/img/base-illu.svg" alt="test" />
+            <img className={styles.base} src="/assets/img/base-illu.svg" />
             {animations.map((anim, idx) => <div key={idx} id={anim.id} className={styles['lottie-anim']} />)}
 
+            <img className={`${styles.bubbles} ${0 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles1.svg" />
+            <img className={`${styles.bubbles} ${1 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles2.svg" />
+            <img className={`${styles.bubbles} ${2 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles3.svg" />
         </div>
     )
 }
