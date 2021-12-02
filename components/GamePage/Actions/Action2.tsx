@@ -9,8 +9,8 @@ interface IAction2 {
 }
 
 const Action2 = ({ handleChoice }: IAction2) => {
-    const { step } = useContext(NavigationContext);
-    const [count, setCount] = useState<number>(5) // countDown, par défaut à 5
+    const { step, setTimer } = useContext(NavigationContext);
+    const [count, setCount] = useState<number>(10) // countDown, par défaut à 5
     const [randomResult, setRandomResult] = useState<number>(0) // Choisit dès le début de manière random le serum si le joueur repond pas
     const [serumArray, setSerumArray] = useState([
         choicesData[step].firstChoice,
@@ -35,7 +35,10 @@ const Action2 = ({ handleChoice }: IAction2) => {
         let timer: any = null;
 
         if (count > 0) {
-            timer = setTimeout(() => setCount(count - 1), 1000)
+            timer = setTimeout(() => {
+                setCount(count - 1)
+                setTimer(count - 1)
+            }, 1000)
         } else if (count >= 0) {
             //Si il n'a pas répondu, serum random
             handleChoice(choicesData[step].firstChoice)
@@ -46,10 +49,8 @@ const Action2 = ({ handleChoice }: IAction2) => {
         };
     }, [count])
 
-
     return (
         <div className={styles.action2}>
-            <div>{count}</div>
             <button onClick={() => handleChoice(choicesData[step].firstChoice)}>
                 <img src={choicesData[step].firstChoice.img} />
             </button>
