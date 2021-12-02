@@ -31,16 +31,16 @@ const Action3 = ({ handleChoice }: IAction3) => {
     useEffect(() => {
         // pas de switch case car on ne peut pas mettre des > || < :(
         if(firstChoicePercent === 100) {
-            console.log('100')
+            //console.log('100')
             setResultSlider(0)
         } else if (firstChoicePercent >= 50) {
-            console.log('superieur ou égal à 50')
+            //console.log('superieur ou égal à 50')
             setResultSlider(1)
         } else if (firstChoicePercent < 50 && firstChoicePercent !== 0) {
-            console.log('inférieur à 50')
+            //console.log('inférieur à 50')
             setResultSlider(2)
         } else if (firstChoicePercent === 0) {
-            console.log("égal à 0")
+            //console.log("égal à 0")
             setResultSlider(3)
         }
     }, [firstChoicePercent])
