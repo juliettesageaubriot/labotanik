@@ -36,7 +36,7 @@ const Results = ({ }: IResults) => {
 
             <div className={styles.title}>real-time simulator</div>
 
-            <img className={styles.base} src="/assets/img/test-illu.svg" alt="test" />
+            <img className={styles.base} src="/assets/img/base-illu.svg" alt="test" />
             {animations.map((anim, idx) => <div key={idx} id={anim.id} className={styles['lottie-anim']} />)}
 
         </div>
