@@ -12,14 +12,14 @@ import styles from './styles.module.scss';
 interface IActions { }
 
 const Actions = ({ }: IActions) => {
-    const { step, choices, setChoices, state, setState, animationsRef } = useContext(NavigationContext);
+    const { step, setStep, choices, setChoices, state, setState, animationsRef } = useContext(NavigationContext);
 
     const handleChoice = (val: any) => {
         let newArr = [...choices]
         newArr.push(val)
         setChoices(newArr)
 
-        val.triggerAnims.map((a:string) => {
+        val.triggerAnims.map((a: string) => {
             switch (a) {
                 case "plants-1":
                     let animToPlay1 = animationsRef.find((i) => i.fileName === "plants")
@@ -34,12 +34,12 @@ const Actions = ({ }: IActions) => {
                 case "plants-3":
                     let animToPlay3 = animationsRef.find((i) => i.fileName === "plants")
                     console.log("play plants 3")
-                    animToPlay3.playSegments([126, 200], false);
+                    animToPlay3.playSegments([126, 275], false);
                     break;
                 case "plants-4":
                     let animToPlay4 = animationsRef.find((i) => i.fileName === "plants")
                     console.log("play plants 4")
-                    animToPlay4.playSegments([201, 250], false);
+                    animToPlay4.playSegments([276, 325], false);
                     break;
                 default:
                     let animToPlay = animationsRef.find((i) => i.fileName === a)
@@ -47,7 +47,7 @@ const Actions = ({ }: IActions) => {
             }
         })
 
-        val.triggerSounds.map((s:string) => {
+        val.triggerSounds.map((s: string) => {
             // TODO : play sound (look at anim above for example)
         })
 
@@ -58,20 +58,37 @@ const Actions = ({ }: IActions) => {
         setState("CHOICE")
     }
 
+    const handleNextStep = () => {
+        3 > step ? setStep(step + 1) : console.log('popin') //TODO JUJU
+        setState("RULE")
+    }
+
     return (
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
-            je suis le container des actions
-            <br /><br />
-            current step : {step}
-            <br /><br />
-            choices : {0 < choices.length && choices.map((i) => i.title + ', ')}
-            <br /><br />
+            <div className={styles.head_container}>
+                <div className={styles.title}>protocole technique</div>
+                <div className={styles.timer}>00:00</div>
+                <div className={styles.steps}>
+                    étape {step + 1}/4
+                    <div className={styles.pins}>
+                        <span className={0 <= step && styles.active}></span>
+                        <span className={1 <= step && styles.active}></span>
+                        <span className={2 <= step && styles.active}></span>
+                        <span className={3 <= step && styles.active}></span>
+                    </div>
+                </div>
+            </div>
 
+            {"RESULT" === state &&
+                <div className={styles.next}>
+                    <button onClick={() => handleNextStep()}>Étape suivante</button>
+                </div>
+            }
 
             {"RULE" === state &&
-                <div>
-                    <b>{choicesData[step].order}</b>
-                    <button onClick={() => handleStartChoice()}>faire mon choix</button>
+                <div className={styles.rule}>
+                    <p dangerouslySetInnerHTML={{ __html: choicesData[step].order }}></p>
+                    <button onClick={() => handleStartChoice()}>{choicesData[step].btnStart}</button>
                 </div>
             }
 

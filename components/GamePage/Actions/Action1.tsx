@@ -5,7 +5,7 @@ import { choicesData } from "@data/choicesData";
 import styles from './styles.module.scss';
 
 interface IAction1 {
-    handleChoice:any;
+    handleChoice: any;
 }
 
 const Action1 = ({ handleChoice }: IAction1) => {
@@ -13,9 +13,12 @@ const Action1 = ({ handleChoice }: IAction1) => {
 
     return (
         <div className={styles.action1}>
-            Action1
-            <button onClick={() => handleChoice(choicesData[step].firstChoice)}>{choicesData[step].firstChoice.title}</button>
-            <button onClick={() => handleChoice(choicesData[step].secondChoice)}>{choicesData[step].secondChoice.title}</button>
+            <button onClick={() => handleChoice(choicesData[step].firstChoice)}>
+                <img src={choicesData[step].firstChoice.img} />
+            </button>
+            <button onClick={() => handleChoice(choicesData[step].secondChoice)}>
+                <img src={choicesData[step].secondChoice.img} />
+            </button>
         </div>
     )
 }

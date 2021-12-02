@@ -6,6 +6,7 @@
     height: 100%;
     background-color: black;
     overflow: hidden;
+    // border: 1px solid $color-black;
 
     &.disabled {
         pointer-events: none;
@@ -15,8 +16,35 @@
             height: 100%;
             position: absolute;
             inset: 0;
-            background-color: rgba($color-black, .6);
+            background-color: rgba($color-black, 0.6);
         }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 100%;
+        background-color: $color-greyLight;
+        border-left: 1px solid $color-black;
+    }
+
+    .title {
+        background: $color-greyLight;
+        border-left: 1px solid $color-black;
+        font-family: $font-body;
+        font-weight: $ft-medium;
+        font-size: 22px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $color-black;
+        padding: 15px 20px;
+        margin-left: 21px;
+        width: fit-content;
+        background: -webkit-linear-gradient(120deg, transparent 15px, $color-greyLight 0);
+        background-position: bottom right;
     }
 
     button {
@@ -26,11 +54,12 @@
         z-index: 200;
     }
 
-    .base, .lottie-anim {
+    .base,
+    .lottie-anim {
         width: 100%;
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: calc(50% + 20px);
         transform: translate(-50%, -50%);
     }
 }

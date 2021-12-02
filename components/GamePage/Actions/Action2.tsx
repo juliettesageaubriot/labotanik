@@ -38,7 +38,7 @@ const Action2 = ({ handleChoice }: IAction2) => {
             timer = setTimeout(() => setCount(count - 1), 1000)
         } else if (count >= 0) {
             //Si il n'a pas répondu, serum random
-            handleChoice(serumArray[randomResult])
+            handleChoice(choicesData[step].firstChoice)
         }
 
         return () => {
@@ -50,9 +50,12 @@ const Action2 = ({ handleChoice }: IAction2) => {
     return (
         <div className={styles.action2}>
             <div>{count}</div>
-            Action2
-            <button onClick={() => handleChoice(choicesData[step].firstChoice)}>{choicesData[step].firstChoice.title}</button>
-            <button onClick={() => handleChoice(choicesData[step].secondChoice)}>{choicesData[step].secondChoice.title}</button>
+            <button onClick={() => handleChoice(choicesData[step].firstChoice)}>
+                <img src={choicesData[step].firstChoice.img} />
+            </button>
+            <button onClick={() => handleChoice(choicesData[step].secondChoice)}>
+                <img src={choicesData[step].secondChoice.img} />
+            </button>
         </div>
     )
 }
