@@ -16,8 +16,13 @@ const Seeds = ({ }: ISeeds) => {
                 <span className={styles.title_zoom}>x600</span>
             </div>
 
+            <div className={styles.video_container}>
+                <video autoPlay loop>
+                    <source src="/assets/microscope.mp4" type="video/mp4" />
+                </video>
+            </div>
 
-            {0 < choices.length && choices.map((i) => i.id + ', ')}
+            {/* {0 < choices.length && choices.map((i) => i.id + ', ')} */}
         </div>
     )
 }
