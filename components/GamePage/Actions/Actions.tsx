@@ -119,7 +119,7 @@ const Actions = ({ }: IActions) => {
 
             <div className={styles.head_container}>
                 <div className={styles.title}>protocole technique</div>
-                <div className={styles.timer}>{1 === step ? (timer < 10 ? `0${timer}:00` : `${timer}:00`) : "00:00"}</div>
+                <div className={`${styles.timer} ${1 === step && "CHOICE" === state ? styles.active : ''}`}>{1 === step ? (timer < 10 ? `0${timer}:00` : `${timer}:00`) : "00:00"}</div>
                 <div className={styles.steps}>
                     étape {step + 1}/4
                     <div className={styles.pins}>
