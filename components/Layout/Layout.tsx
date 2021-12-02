@@ -19,7 +19,7 @@ const Layout = ({ children, page, titleSEO }: ILayout) => {
                 <div className={`${styles['content-wrapper']} ${styles[`${page}-content`]}`}>
                     {children}
                 </div>
-                <SoundInputs />
+                {/* <SoundInputs /> */}
             </div>
 
             <div className={styles['poppin-onlydesktop']}>

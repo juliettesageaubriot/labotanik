@@ -17,6 +17,7 @@ interface IActions { }
 const Actions = ({ }: IActions) => {
     const { step, setStep, choices, setChoices, state, setState, animationsRef, timer, soundsRef, setSoundsRef } = useContext(NavigationContext);
 
+    const [nameStep, setNameStep] = useState<string>("")
 
     useEffect(() => {
         if (0 === soundsRef.length) {
@@ -68,10 +69,20 @@ const Actions = ({ }: IActions) => {
         val.triggerSounds.map((s: string) => {
             // TODO : play sound (look at anim above for example)
 
+            // sounds.map((sound:any, i:number) => {
+            //     console.log(sound)
+            //     if(sound.loop === false) {
+            //         if(sound.play === true) {
+            //             sound.play = false
+            //         }
+            //     }
+            // })
+
             // let soundToPlay = soundsRef.find((i) => i.id === s)
             // soundToPlay.play = true
 
-            // console.log(soundToPlay.play)
+            // console.log(s)
+            setNameStep(s)
         })
 
         setState("RESULT")
@@ -86,23 +97,20 @@ const Actions = ({ }: IActions) => {
         setState("RULE")
     }
 
-    const Test = () => {
-        useEffect(() => {
 
-        }, [])
-    }
+    console.log(nameStep)
 
     return (
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
 
             {/* {sounds?.map((sound: any, i: number) => {
-                console.log("----- maaaap -----", sound.play)
+
                 return (
+                    nameStep === sound.id &&
                     <Sound
-                        key={`sound-play-${sound.path}`}
                         soundUrl={sound.path}
-                        isPlaying={sound.play}
-                        isLooping={sound.loop}
+                        isPlaying={true}
+                        isLooping={false}
                         mute={false}
                     />
                 )
@@ -115,10 +123,10 @@ const Actions = ({ }: IActions) => {
                 <div className={styles.steps}>
                     étape {step + 1}/4
                     <div className={styles.pins}>
-                        <span className={0 <= step && styles.active}></span>
-                        <span className={1 <= step && styles.active}></span>
-                        <span className={2 <= step && styles.active}></span>
-                        <span className={3 <= step && styles.active}></span>
+                        <span className={0 <= step ? styles.active : ''}></span>
+                        <span className={1 <= step ? styles.active : ''}></span>
+                        <span className={2 <= step ? styles.active : ''}></span>
+                        <span className={3 <= step ? styles.active : ''}></span>
                     </div>
                 </div>
             </div>
