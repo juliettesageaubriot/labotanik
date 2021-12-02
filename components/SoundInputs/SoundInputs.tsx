@@ -31,7 +31,13 @@ const SoundInputs = () => {
                     <input onChange={(e: any) => isOnChangeSoundInputs(e)} type="range" min="0" max="1" step="0.1" value={soundGlobalVolume} className={`${styles['slider-input']}`} id="sliderInput" />
                 </div>
                 <div className={styles['mute-button']}>
-                    <button onClick={() => isMutedButton()} disabled={soundGlobalVolume === 0 ? true : false}>Mute</button>
+                    <button onClick={() => isMutedButton()} disabled={soundGlobalVolume === 0 ? true : false}>
+                        {!!mutedGlobalVolume ?
+                            <img src="/assets/img/mute.svg" alt="mute icon" />
+                            :
+                            <img src="/assets/img/unmute.svg" alt="unmute icon" />
+                        }
+                    </button>
                 </div>
             </div>
         </div>
