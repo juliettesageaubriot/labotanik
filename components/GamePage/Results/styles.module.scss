@@ -1,10 +1,20 @@
 .results_container {
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: lightcoral;
+    background-color: black;
 
     &.disabled {
         filter: grayscale(100%);
         pointer-events: none;
     }
+
+    .test, .cat {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+    }
+
+
 }
