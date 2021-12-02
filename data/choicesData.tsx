@@ -4,21 +4,21 @@ export const choicesData = [
         order: "clique sur un serum",
         firstChoice: {
             id: "serum-1",
-            title: "Serum 1",
+            title: "Purificatilium",
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed1",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: ["cat-died", "plants-1"],
+            triggerSounds: [""],
         },
         secondChoice: {
             id: "serum-2",
-            title: "Serum 2",
+            title: "BoostyFlos",
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed1",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: ["cat-died", "plants-1"],
+            triggerSounds: [""],
         }
     },
     {
@@ -26,21 +26,21 @@ export const choicesData = [
         order: "choisis vite !",
         firstChoice: {
             id: "serum-3",
-            title: "Serum 3",
+            title: "autonomie totale n°8",
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed3",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: ["clim", "crackles", "plants-2"],
+            triggerSounds: [""],
         },
         secondChoice: {
             id: "serum-4",
-            title: "Serum 4",
+            title: "autonomie totale n°4",
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed4",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: ["", "plants-2"],
+            triggerSounds: [""],
         }
     },
     {
@@ -52,8 +52,8 @@ export const choicesData = [
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed5",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: [""],
+            triggerSounds: [""],
         },
         secondChoice: {
             id: "serum-plus-de-50",
@@ -61,8 +61,8 @@ export const choicesData = [
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed6",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: [""],
+            triggerSounds: [""],
         },
         thirdChoice: {
             id: "serum-moins-de-50",
@@ -70,8 +70,8 @@ export const choicesData = [
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed7",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: [""],
+            triggerSounds: [""],
         },
         fourChoice: {
             id: "serum-egal-a-0",
@@ -79,8 +79,8 @@ export const choicesData = [
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed8",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: [""],
+            triggerSounds: [""],
         }
     },
     {
@@ -92,8 +92,8 @@ export const choicesData = [
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed7",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: ["plants-4"],
+            triggerSounds: [""],
         },
         secondChoice: {
             id: "serum-8",
@@ -101,8 +101,8 @@ export const choicesData = [
             description: "ce serum permet de ....",
             img: "",
             seedAnimId: "seed8",
-            resultsAnimId: [""],
-            triggerSound: "",
+            triggerAnims: ["plants-4"],
+            triggerSounds: [""],
         }
     },
 ]

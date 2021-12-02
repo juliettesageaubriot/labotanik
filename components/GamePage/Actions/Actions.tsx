@@ -12,12 +12,44 @@ import styles from './styles.module.scss';
 interface IActions { }
 
 const Actions = ({ }: IActions) => {
-    const { step, setStep, choices, setChoices, state, setState } = useContext(NavigationContext);
+    const { step, choices, setChoices, state, setState, animationsRef } = useContext(NavigationContext);
 
     const handleChoice = (val: any) => {
         let newArr = [...choices]
         newArr.push(val)
         setChoices(newArr)
+
+        val.triggerAnims.map((a:string) => {
+            switch (a) {
+                case "plants-1":
+                    let animToPlay1 = animationsRef.find((i) => i.fileName === "plants")
+                    console.log("play plants 1")
+                    animToPlay1.playSegments([25, 75], false);
+                    break;
+                case "plants-2":
+                    let animToPlay2 = animationsRef.find((i) => i.fileName === "plants")
+                    console.log("play plants 2")
+                    animToPlay2.playSegments([76, 125], false);
+                    break;
+                case "plants-3":
+                    let animToPlay3 = animationsRef.find((i) => i.fileName === "plants")
+                    console.log("play plants 3")
+                    animToPlay3.playSegments([126, 200], false);
+                    break;
+                case "plants-4":
+                    let animToPlay4 = animationsRef.find((i) => i.fileName === "plants")
+                    console.log("play plants 4")
+                    animToPlay4.playSegments([201, 250], false);
+                    break;
+                default:
+                    let animToPlay = animationsRef.find((i) => i.fileName === a)
+                    animToPlay.play();
+            }
+        })
+
+        val.triggerSounds.map((s:string) => {
+            // TODO : play sound (look at anim above for example)
+        })
 
         setState("RESULT")
     }

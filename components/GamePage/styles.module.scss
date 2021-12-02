@@ -1,3 +1,5 @@
+@import "../../assets/scss/variables.scss";
+
 .game_container {
     display: flex;
     justify-content: center;
@@ -6,10 +8,10 @@
     height: 100vh;
 
     .left {
-        width: 55%;
+        width: 50%;
     }
 
     .right {
-        width: 45%;
+        width: 50%;
     }
 }
