@@ -17,7 +17,10 @@ export const NavigationContext = createContext({
   onChangeSoundGlobalVolume: (volume: number) => { }, // changement global volume jeu
 
   mutedGlobalVolume: false, // mute le sons global du jeu
-  setMutedGlobalVolume: (mute: boolean) => { } // set le mute
+  setMutedGlobalVolume: (mute: boolean) => { }, // set le mute
+
+  animationsRef: [],
+  setAnimationsRef: (animRef: any) => {}
 
 });
 
@@ -28,6 +31,7 @@ const NavigationProvider = (props: any) => {
   const [isUserName, setIsUserName] = useState<string>("");
   const [isSoundGlobalVolumeState, setIsSoundGlobalVolumeState] = useState<number>(0.5);
   const [isMutedGlobalVolume, setIsMutedGlobalVolume] = useState<boolean>(false);
+  const [isAnimationsRef, setIsAnimationsRef] = useState<[]>([]);
 
   return (
     <NavigationContext.Provider value={{
@@ -48,6 +52,9 @@ const NavigationProvider = (props: any) => {
 
       mutedGlobalVolume: isMutedGlobalVolume,
       setMutedGlobalVolume: (mute: boolean) => setIsMutedGlobalVolume(mute),
+
+      animationsRef: isAnimationsRef,
+      setAnimationsRef: (animRef: []) => setIsAnimationsRef(animRef),
 
     }}>
         {props.children}
