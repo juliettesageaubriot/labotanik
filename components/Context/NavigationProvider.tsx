@@ -8,7 +8,7 @@ export const NavigationContext = createContext({
   setChoices: (choice: any[]) => { },
 
   state: "",
-  setState: (state:string) => {},
+  setState: (state: string) => { },
 
   userName: "", // nom du joueur
   setUserName: (name: string) => { }, // changement de nom du joueur
@@ -20,7 +20,10 @@ export const NavigationContext = createContext({
   setMutedGlobalVolume: (mute: boolean) => { }, // set le mute
 
   animationsRef: [],
-  setAnimationsRef: (animRef: any) => {}
+  setAnimationsRef: (animRef: any) => { },
+
+  timer: 10,
+  setTimer: (timer: number) => { }
 
 });
 
@@ -32,6 +35,7 @@ const NavigationProvider = (props: any) => {
   const [isSoundGlobalVolumeState, setIsSoundGlobalVolumeState] = useState<number>(0.5);
   const [isMutedGlobalVolume, setIsMutedGlobalVolume] = useState<boolean>(false);
   const [isAnimationsRef, setIsAnimationsRef] = useState<[]>([]);
+  const [isTimer, setIsTimer] = useState<number>(10)
 
   return (
     <NavigationContext.Provider value={{
@@ -56,8 +60,11 @@ const NavigationProvider = (props: any) => {
       animationsRef: isAnimationsRef,
       setAnimationsRef: (animRef: []) => setIsAnimationsRef(animRef),
 
+      timer: isTimer,
+      setTimer: (timer:number) => setIsTimer(timer)
+
     }}>
-        {props.children}
+      {props.children}
     </NavigationContext.Provider>
   )
 }

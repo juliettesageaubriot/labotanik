@@ -12,7 +12,7 @@ import styles from './styles.module.scss';
 interface IActions { }
 
 const Actions = ({ }: IActions) => {
-    const { step, setStep, choices, setChoices, state, setState, animationsRef } = useContext(NavigationContext);
+    const { step, setStep, choices, setChoices, state, setState, animationsRef, timer } = useContext(NavigationContext);
 
     const handleChoice = (val: any) => {
         let newArr = [...choices]
@@ -67,7 +67,7 @@ const Actions = ({ }: IActions) => {
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
             <div className={styles.head_container}>
                 <div className={styles.title}>protocole technique</div>
-                <div className={styles.timer}>00:00</div>
+                <div className={styles.timer}>{1 === step ? (timer < 10 ? `0${timer}:00` : `${timer}:00`) : "00:00"}</div>
                 <div className={styles.steps}>
                     étape {step + 1}/4
                     <div className={styles.pins}>
