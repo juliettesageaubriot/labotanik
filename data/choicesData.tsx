@@ -27,7 +27,7 @@ export const choicesData = [
             img: "/assets/img/autonomie-8.svg",
             // seedAnimId: "seed3",
             triggerAnims: ["clim", "crackles", "plants-2"],
-            triggerSounds: [""],
+            triggerSounds: ["clim"],
         },
         secondChoice: {
             id: "autonomie-4",

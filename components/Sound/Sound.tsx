@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { NavigationContext } from "@components/Context/NavigationProvider";
 
 import ReactHowler from 'react-howler'
@@ -13,7 +13,8 @@ interface ISound {
 
 const Sound = ({ soundUrl, isPlaying, isLooping, mute, volume }: ISound) => {
     const { mutedGlobalVolume, soundGlobalVolume } = useContext(NavigationContext);
-
+    const soundRef = useRef()
+    
     return (
         <>
             <ReactHowler
@@ -22,6 +23,7 @@ const Sound = ({ soundUrl, isPlaying, isLooping, mute, volume }: ISound) => {
                 loop={isLooping}
                 mute={!!mutedGlobalVolume ? true : mute}
                 volume={soundGlobalVolume}
+                ref={soundRef}
             />
         </>
     )

@@ -17,7 +17,8 @@ interface IActions { }
 const Actions = ({ }: IActions) => {
     const { step, setStep, choices, setChoices, state, setState, animationsRef, timer, soundsRef, setSoundsRef } = useContext(NavigationContext);
 
-    const [nameStep, setNameStep] = useState<string>("")
+    const [nameStep, setNameStep] = useState<string>('')
+
 
     useEffect(() => {
         if (0 === soundsRef.length) {
@@ -35,7 +36,7 @@ const Actions = ({ }: IActions) => {
         newArr.push(val)
         setChoices(newArr)
 
-        console.log(val)
+        // console.log(val)
 
         val.triggerAnims.map((a: string) => {
             switch (a) {
@@ -67,6 +68,8 @@ const Actions = ({ }: IActions) => {
 
 
         val.triggerSounds.map((s: string) => {
+            setNameStep(s)
+            // console.log(soundsRef)
             // TODO : play sound (look at anim above for example)
 
             // sounds.map((sound:any, i:number) => {
@@ -78,11 +81,12 @@ const Actions = ({ }: IActions) => {
             //     }
             // })
 
+            // console.log(s)
+
             // let soundToPlay = soundsRef.find((i) => i.id === s)
             // soundToPlay.play = true
 
             // console.log(s)
-            setNameStep(s)
         })
 
         setState("RESULT")
@@ -97,17 +101,16 @@ const Actions = ({ }: IActions) => {
         setState("RULE")
     }
 
-
-    console.log(nameStep)
+    // console.log(nameStep)
 
     return (
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
 
-            {/* {sounds?.map((sound: any, i: number) => {
-
+            {sounds?.map((sound: any, i: number) => {
                 return (
-                    nameStep === sound.id &&
+                    sound.id === nameStep && sound.loop === false && state === "RESULT" &&
                     <Sound
+                        key={`sound-play-${sound.id}`}
                         soundUrl={sound.path}
                         isPlaying={true}
                         isLooping={false}
@@ -115,7 +118,23 @@ const Actions = ({ }: IActions) => {
                     />
                 )
             })
-            } */}
+            }
+
+            {sounds?.map((sound: any, i: number) => {
+                let playSound:boolean = false;
+                if(sound.id === nameStep) sound.play = true
+                return (
+                    sound.loop === true &&
+                    <Sound
+                        key={`sound-play-loop-${sound.id}`}
+                        soundUrl={sound.path}
+                        isPlaying={sound.play}
+                        isLooping={true}
+                        mute={false}
+                    />
+                )
+            })
+            }
 
             <div className={styles.head_container}>
                 <div className={styles.title}>protocole technique</div>
