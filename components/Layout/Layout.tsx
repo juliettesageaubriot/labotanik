@@ -23,13 +23,15 @@ const Layout = ({ children, page, titleSEO }: ILayout) => {
             </div>
 
             <div className={styles['poppin-onlydesktop']}>
-                <Poppin 
-                content='Cette expérience est disponible sur ordinateur. '
-                icon={true} 
-                textAlign="center"
+                <Poppin
+                    content='Cette expérience est disponible sur ordinateur. '
+                    icon={true}
+                    textAlign="center"
+                    number={983}
+                    size="big"
+                    end={false}
                 />
             </div>
-
         </div>
     )
 }
