@@ -13,7 +13,7 @@ export const choicesData = [
         secondChoice: {
             id: "boostyflos",
             img: "/assets/img/boostyflos.svg",
-            seedAnimId: "seed1",
+            seedAnimId: "seed2",
             triggerAnims: ["cat-died", "plants-1"],
             triggerSounds: ["cat-died"],
         }
@@ -25,15 +25,15 @@ export const choicesData = [
         firstChoice: {
             id: "autonomie-8",
             img: "/assets/img/autonomie-8.svg",
-            seedAnimId: "seed3",
+            // seedAnimId: "seed3",
             triggerAnims: ["clim", "crackles", "plants-2"],
             triggerSounds: [""],
         },
         secondChoice: {
             id: "autonomie-4",
             img: "/assets/img/autonomie-4.svg",
-            seedAnimId: "seed4",
-            triggerAnims: ["", "plants-2"],
+            // seedAnimId: "seed4",
+            triggerAnims: ["plants-2"],
             triggerSounds: [""],
         }
     },
@@ -42,49 +42,49 @@ export const choicesData = [
         order: "À présent, tu dois faire varier la composition des sérums grâce à la jauge pour créer le mélange parfait.",
         btnStart: "C'est noté !",
         firstChoice: {
-            id: "serum-egale-egal-a-100",
-            img: "",
-            seedAnimId: "seed5",
+            id: "protectifias",
+            img: "/assets/img/protectifias.svg",
+            // seedAnimId: "seed5",
             triggerAnims: ["plants-3"],
             triggerSounds: [""],
         },
         secondChoice: {
-            id: "serum-plus-de-50",
-            img: "",
-            seedAnimId: "seed6",
+            id: "lucinalis",
+            img: "/assets/img/lucinalis.svg",
+            // seedAnimId: "seed6",
             triggerAnims: ["plants-3"],
             triggerSounds: [""],
         },
-        thirdChoice: {
-            id: "serum-moins-de-50",
-            img: "",
-            seedAnimId: "seed7",
-            triggerAnims: ["plants-3"],
-            triggerSounds: [""],
-        },
-        fourChoice: {
-            id: "serum-egal-a-0",
-            img: "",
-            seedAnimId: "seed8",
-            triggerAnims: ["plants-3"],
-            triggerSounds: [""],
-        }
+        // thirdChoice: {
+        //     id: "serum-moins-de-50",
+        //     img: "",
+        //     seedAnimId: "seed7",
+        //     triggerAnims: ["plants-3"],
+        //     triggerSounds: [""],
+        // },
+        // fourChoice: {
+        //     id: "serum-egal-a-0",
+        //     img: "",
+        //     seedAnimId: "seed8",
+        //     triggerAnims: ["plants-3"],
+        //     triggerSounds: [""],
+        // }
     },
     {
         step: 3,
         order: "On a perdu les étiquettes, un petit génie comme toi devrait savoir à gérer ça ! Sélectionne le bon sérum...",
         btnStart: "Allons-y !",
         firstChoice: {
-            id: "serum-7",
-            img: "",
-            seedAnimId: "seed7",
+            id: "inconnu-1",
+            img: "/assets/img/inconnu-1.svg",
+            // seedAnimId: "seed7",
             triggerAnims: ["plants-4"],
             triggerSounds: [""],
         },
         secondChoice: {
-            id: "serum-8",
-            img: "",
-            seedAnimId: "seed8",
+            id: "inconnu-2",
+            img: "/assets/img/inconnu-2.svg",
+            // seedAnimId: "seed8",
             triggerAnims: ["plants-4"],
             triggerSounds: [""],
         }

@@ -55,11 +55,22 @@
     }
 
     .base,
-    .lottie-anim {
+    .lottie-anim,
+    .bubbles {
         width: 100%;
         position: absolute;
         top: 50%;
         left: calc(50% + 20px);
         transform: translate(-50%, -50%);
+    }
+
+    .bubbles {
+        opacity: 0;
+        transition: 1.2s opacity ease-in-out 1s;
+
+        &.visible {
+            opacity: 1;
+            transition: 1.2s opacity ease-in-out 1s;
+        }
     }
 }
