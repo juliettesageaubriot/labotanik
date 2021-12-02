@@ -1,0 +1,108 @@
+export const choicesData = [
+    {
+        step: 0,
+        order: "clique sur un serum",
+        firstChoice: {
+            id: "serum-1",
+            title: "Purificatilium",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed1",
+            triggerAnims: ["cat-died", "plants-1"],
+            triggerSounds: [""],
+        },
+        secondChoice: {
+            id: "serum-2",
+            title: "BoostyFlos",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed1",
+            triggerAnims: ["cat-died", "plants-1"],
+            triggerSounds: [""],
+        }
+    },
+    {
+        step: 1,
+        order: "choisis vite !",
+        firstChoice: {
+            id: "serum-3",
+            title: "autonomie totale n°8",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed3",
+            triggerAnims: ["clim", "crackles", "plants-2"],
+            triggerSounds: [""],
+        },
+        secondChoice: {
+            id: "serum-4",
+            title: "autonomie totale n°4",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed4",
+            triggerAnims: ["", "plants-2"],
+            triggerSounds: [""],
+        }
+    },
+    {
+        step: 2,
+        order: "compose ton serum en mélangeant les solutions",
+        firstChoice: {
+            id: "serum-egale-egal-a-100",
+            title: "Serum égal à 100",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed5",
+            triggerAnims: [""],
+            triggerSounds: [""],
+        },
+        secondChoice: {
+            id: "serum-plus-de-50",
+            title: "Serum plus de 50",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed6",
+            triggerAnims: [""],
+            triggerSounds: [""],
+        },
+        thirdChoice: {
+            id: "serum-moins-de-50",
+            title: "Serum moins de 50",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed7",
+            triggerAnims: [""],
+            triggerSounds: [""],
+        },
+        fourChoice: {
+            id: "serum-egal-a-0",
+            title: "Serum égal à 0",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed8",
+            triggerAnims: [""],
+            triggerSounds: [""],
+        }
+    },
+    {
+        step: 3,
+        order: "on a perdu les étiquettes !!!",
+        firstChoice: {
+            id: "serum-7",
+            title: "Serum 7",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed7",
+            triggerAnims: ["plants-4"],
+            triggerSounds: [""],
+        },
+        secondChoice: {
+            id: "serum-8",
+            title: "Serum 8",
+            description: "ce serum permet de ....",
+            img: "",
+            seedAnimId: "seed8",
+            triggerAnims: ["plants-4"],
+            triggerSounds: [""],
+        }
+    },
+]

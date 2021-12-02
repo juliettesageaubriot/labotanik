@@ -1,0 +1,7 @@
+@import './reset';
+@import './variables.scss';
+@import './fonts.scss';
+
+* {
+    font-family: $font-body;
+}

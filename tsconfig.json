@@ -13,24 +13,43 @@
       ],
       "@data/*": [
         "./data/*"
-      ],
+      ]
     },
-
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "moduleResolution": "node",
+    "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    // "incremental": false,
     "jsx": "preserve",
+    "outDir": "./dist",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

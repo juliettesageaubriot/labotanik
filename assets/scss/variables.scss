@@ -1,0 +1,61 @@
+// font family
+$font-body: "Circular Std";
+$font-title: "Neue Machina";
+
+// font weight
+$ft-thin: 100;
+$ft-extralight: 200;
+$ft-light: 300;
+$ft-normal: 400;
+$ft-regular: normal;
+$ft-medium: 500;
+$ft-semibold: 600;
+$ft-bold: 700;
+$ft-extrabold: 800;
+$ft-black: 900;
+
+// colors
+$color-black: #000;
+$color-white: #fff;
+$color-greyBold: #c4c4c4;
+$color-greyMedium: #eaeaea;
+$color-greyLight: #F7F7F7;
+$color-orange: #ED712E;
+
+// gradients
+$deg-yellow: linear-gradient(180deg, #FFE001 0%, #FCDD8A 100%);
+$deg-blue: linear-gradient(137.99deg, #1F228B -0.18%, #90D5F2 110.27%);
+$deg-orange: linear-gradient(117.42deg, #FC4A1A 9.14%, #F7B733 52.52%);
+$deg-fresh: linear-gradient(125.8deg, #A1FFCE -21.61%, #FAFFD1 87.5%);
+$deg-summer: linear-gradient(125.8deg, #FF6E7F -21.61%, #BFE9FF 87.5%);
+$deg-pink: linear-gradient(127.2deg, #DD5E89 9.37%, #F7BB97 88.02%);
+$deg-toxic: linear-gradient(180deg, #31FC45 0%, #11831D 161.77%);
+$deg-green: linear-gradient(127.2deg, #DCE35B 9.37%, #45B649 88.02%);
+$deg-red: linear-gradient(119.67deg, #8A2387 -9.63%, #E94057 54.68%, #F27121 101.58%);
+
+// breakpoints
+$bp-smartphone-small: 320px;
+$bp-smartphone: 375px;
+$bp-smartphone-medium: 410px;
+$bp-smartphone-large: 480px;
+$bp-smartphone-xlarge: 680px;
+$bp-tablet: 768px;
+$bp-tablet-exlcude: 769px;
+$bp-tablet-large: 840px;
+$bp-desk-small: 960px;
+$bp-desk-medium: 1024px;
+$bp-desk-large: 1200px;
+$bp-desk-large-plus: 1340px;
+$bp-desk-large-intermediaire: 1440px;
+$bp-desk-xlarge: 1600px;
+$bp-desk-xxlarge: 1800px;
+$bp-desk-4k-small: 2220px;
+$bp-desk-4k-medium: 2620px;
+$bp-desk-4k-large: 3040px;
+$bp-desk-4k-xlarge: 3220px;
+$bp-desk-4k-xxlarge: 3620px;
+
+$bp-height-xsmall: 580px;
+$bp-height-small: 640px;
+$bp-height-medium: 768px;
+$bp-height-large: 900px;

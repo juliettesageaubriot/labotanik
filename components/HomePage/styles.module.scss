@@ -1,0 +1,184 @@
+@use "sass:math";
+@import "../../assets/scss/variables.scss";
+
+.home {
+    &_container {
+        position: relative;
+        background: $color-black;
+        background-image: linear-gradient(90deg, rgba($color-greyBold, 0.4) 1px, transparent 1px);
+        background-size: math.div(100%, 9);
+        width: 100%;
+        height: 100vh;
+    }
+    &__inner {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        .home-center {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            .img-wrapper {
+                max-width: 630px;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                }
+            }
+            .center {
+                &-wrapper {
+                    margin-top: 130px;
+                }
+                &_inner {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 60px;
+
+                    .input {
+                        &-wrapper {
+                            position: relative;
+                            width: calc(100% - 300px);
+                            height: 100%;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                border: 2px solid $color-white;
+                                bottom: -10px;
+                                left: 10px;
+                                width: calc(100% + 20px);
+                                height: 100%;
+                                z-index: 1;
+                            }
+                            .esthetic-box {
+                                position: absolute;
+                                top: -10px;
+                                left: 10px;
+                                width: 115px;
+                                height: 20px;
+                                background-color: $color-black;
+                                border-top: 2px solid $color-white;
+                                &:before {
+                                    content: "";
+                                    position: absolute;
+                                    top: -2px;
+                                    left: 0px;
+                                    width: 2px;
+                                    height: 14px;
+                                    background-color: $color-white;
+                                    transform: rotate(45deg);
+                                    transform-origin: top left;
+                                }
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    top: -2px;
+                                    right: 0px;
+                                    width: 2px;
+                                    height: 14px;
+                                    background-color: $color-white;
+                                    transform: rotate(-45deg);
+                                    transform-origin: top right;
+                                }
+                            }
+                            input {
+                                position: relative;
+                                width: 100%;
+                                height: calc(100% - 20px - 4px);
+                                border: 2px $color-white solid;
+                                padding: 10px;
+                                background-color: $color-black;
+                                z-index: 5;
+                                font-family: $font-title;
+                                font-size: 16px;
+                                letter-spacing: 3px;
+                                color: $color-greyBold;
+                                text-transform: uppercase;
+                                &::placeholder {
+                                }
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .link {
+                        &-wrapper {
+                        }
+                        &-content {
+                            font-family: $font-title;
+                            font-size: 20px;
+                            color: $color-orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__under {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        .symbol {
+            position: absolute;
+            &-fiole-1 {
+                bottom: 0;
+                right: 0;
+                filter: blur(8px);
+                transform: rotate(20deg) translate(80%, 20%);
+                max-width: 100px;
+                width: 100%;
+            }
+            &-fiole-2 {
+                bottom: 0;
+                left: 0;
+                filter: blur(8px);
+                transform: rotate(-20deg) translate(-60%, 10%);
+                max-width: 305px;
+                width: 100%;
+            }
+            &-fiole-3 {
+                top: 70px;
+                left: 90px;
+                filter: blur(8px);
+                transform: rotate(22deg);
+                max-width: 160px;
+                width: 100%;
+            }
+            &-fiole-4 {
+                top: 50px;
+                right: 0px;
+                transform: rotate(-26deg);
+                filter: blur(8px);
+                max-width: 250px;
+                width: 100%;
+            }
+            &-toxic {
+                top: 40%;
+                left: 60px;
+                max-width: 250px;
+                width: 100%;
+            }
+            &-nucleaire {
+                top: 40%;
+                right: 60px;
+                max-width: 250px;
+                width: 100%;
+            }
+        }
+    }
+}

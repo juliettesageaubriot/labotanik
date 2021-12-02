@@ -1,0 +1,60 @@
+@use "sass:math";
+@import "../../assets/scss/variables.scss";
+
+.sound-slider {
+    &_container {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+    &__inner {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .slider {
+            display: flex;
+            input {
+                cursor: pointer;
+
+                -webkit-appearance: none;
+                height: 5px;
+                background: $color-white;
+                outline: none;
+                -webkit-transition: 0.2s;
+                transition: opacity 0.2s;
+
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 15px;
+                    height: 15px;
+                    background: $color-orange;
+                    cursor: pointer;
+                    border-radius: 20px;
+                }
+            }
+        }
+        .mute-button {
+            button {
+                width: 35px;
+                height: 35px;
+                background-color: $color-black;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                border: 1px solid $color-orange;
+                transition: 0.3s ease-in-out all;
+                margin-left: 5px;
+                img {
+                    width: 18px;
+                }
+                &:hover {
+                    background-color: rgba($color-orange, 0.5);
+                    transition: 0.3s ease-in-out all;
+                }
+            }
+        }
+    }
+}
