@@ -15,10 +15,9 @@ import styles from './styles.module.scss';
 interface IActions { }
 
 const Actions = ({ }: IActions) => {
-    const { step, setStep, choices, setChoices, state, setState, animationsRef, timer, soundsRef, setSoundsRef } = useContext(NavigationContext);
+    const { step, setStep, choices, setChoices, state, setState, animationsRef, timer, soundsRef, setSoundsRef, setEndGame } = useContext(NavigationContext);
 
     const [nameStep, setNameStep] = useState<string>('')
-
 
     useEffect(() => {
         if (0 === soundsRef.length) {
@@ -97,11 +96,9 @@ const Actions = ({ }: IActions) => {
     }
 
     const handleNextStep = () => {
-        3 > step ? setStep(step + 1) : console.log('popin') //TODO JUJU
+        3 > step ? setStep(step + 1) : setEndGame(true)
         setState("RULE")
     }
-
-    // console.log(nameStep)
 
     return (
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
@@ -121,8 +118,8 @@ const Actions = ({ }: IActions) => {
             }
 
             {sounds?.map((sound: any, i: number) => {
-                let playSound:boolean = false;
-                if(sound.id === nameStep) sound.play = true
+                let playSound: boolean = false;
+                if (sound.id === nameStep) sound.play = true
                 return (
                     sound.loop === true &&
                     <Sound
@@ -151,10 +148,12 @@ const Actions = ({ }: IActions) => {
             </div>
 
             {"RESULT" === state &&
+
                 <div className={styles.next}>
-                    <button onClick={() => handleNextStep()}>Étape suivante</button>
+                    <button onClick={() => handleNextStep()}>{3 === step ? "Fin de l'expérience" : "Étape suivante"}</button>
                 </div>
             }
+
 
             {"RULE" === state &&
                 <div className={styles.rule}>

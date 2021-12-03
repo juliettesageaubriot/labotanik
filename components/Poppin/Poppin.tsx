@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 
 import styles from './styles.module.scss'
 
@@ -29,9 +30,11 @@ const Poppin = ({ icon, textAlign, content, number, size, end }: IPoppin) => {
                                 <p dangerouslySetInnerHTML={{ __html: content }}></p>
                                 {!!icon && <div className={styles.icon}>¯\_(ツ)_/¯</div>}
                                 {!!end && <div className={styles.end}>
-                                    <button>
-                                        <span>Quitter la partie &gt;</span>
-                                    </button>
+
+                                    <Link href="/">
+                                        <a>Quitter la partie &gt;</a>
+                                    </Link>
+
                                 </div>}
 
                             </div>

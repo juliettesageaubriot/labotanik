@@ -1,9 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { NavigationContext } from "@components/Context/NavigationProvider";
 import Link from 'next/link';
-
-import Poppin from "@components/Poppin/Poppin";
-
 import styles from './styles.module.scss';
 
 const HomePage = () => {
@@ -14,18 +11,6 @@ const HomePage = () => {
     return (
         <div className={styles["home_container"]}>
             <div className={styles["home__inner"]}>
-
-            {/* TODO mettre où il faut à la fin */}
-            {/* <Poppin
-                content={`${userName}, il semblerait que vous ayez <span>éradicqué l’humanité</span>.</br>
-                Belle prouesse technique, mais ce n’est pas ce qu’on attend de vous... </br>
-                Par conséquent, nous sommes contraint de mettre <span>fin à votre période d’essai</span>.`}
-                icon={true}
-                textAlign="left"
-                number={679}
-                size="small"
-                end={true}
-            /> */}
 
                 <div className={styles["home-center"]}>
                     <div className={styles["img-wrapper"]}>
