@@ -23,12 +23,15 @@
             color: $color-black;
             padding: 15px 20px;
             width: 100%;
+            height: 64px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-image: url("../../../public/assets/img/background-microscope.svg");
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: auto 65px;
+            background-position-y: bottom;
+            border-top: 1px solid black;
         }
         &_text {
             font-family: $font-body;

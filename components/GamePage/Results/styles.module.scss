@@ -28,6 +28,7 @@
         width: 20px;
         height: 100%;
         background-color: $color-greyLight;
+        border-top: 1px solid $color-black;
         border-left: 1px solid $color-black;
     }
 
@@ -45,6 +46,9 @@
         width: fit-content;
         background: -webkit-linear-gradient(120deg, transparent 15px, $color-greyLight 0);
         background-position: bottom right;
+        border-top: 1px solid $color-black;
+        z-index: 3;
+        position: absolute;
     }
 
     button {

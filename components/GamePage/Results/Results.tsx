@@ -42,6 +42,7 @@ const Results = ({ }: IResults) => {
             <img className={`${styles.bubbles} ${0 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles1.svg" />
             <img className={`${styles.bubbles} ${1 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles2.svg" />
             <img className={`${styles.bubbles} ${2 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles3.svg" />
+            <img className={`${styles.bubbles} ${3 === step && "RESULT" === state ? styles.visible : ''}`} src="/assets/img/bulles4.svg" />
         </div>
     )
 }
