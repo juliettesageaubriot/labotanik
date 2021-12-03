@@ -149,7 +149,7 @@ const Actions = ({ }: IActions) => {
             {"RESULT" === state &&
 
                 <div className={styles.next}>
-                    <button onClick={() => handleNextStep()}>{3 === step ? "Fin de l'expérience" : "Étape suivante"}</button>
+                    <button onClick={() => handleNextStep()}>{3 === step ? "/!\\ ERROR 679 /!\\" : "Étape suivante"}</button>
                 </div>
             }
 
