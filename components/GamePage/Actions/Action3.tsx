@@ -49,7 +49,10 @@ const Action3 = ({ handleChoice }: IAction3) => {
     const [scaleLeft, setScaleLeft] = useState(1);
     const [scaleRight, setScaleRight] = useState(1);
 
-    const handleGauge = (value:number) => {
+    const [valueRange, setValueRange] = useState(2)
+
+    const handleGauge = (value: number) => {
+        setValueRange(value)
         switch (value) {
             case 0:
                 setScaleLeft(.8)
@@ -99,7 +102,7 @@ const Action3 = ({ handleChoice }: IAction3) => {
             <button onClick={() => handleChoice(serumArray[resultSlider])}>{serumArray[resultSlider]?.title}</button> */}
 
             <div className={styles.action3}>
-                <img src={choicesData[step].firstChoice.img} style={{transform: `scale(${scaleLeft})`}} />
+                <img src={choicesData[step].firstChoice.img} style={{ transform: `scale(${scaleLeft})` }} />
                 <div className={styles.gauge}>
                     <ReactSlider
                         className={styles.slider}
@@ -107,14 +110,15 @@ const Action3 = ({ handleChoice }: IAction3) => {
                         max={4}
                         marks
                         markClassName={styles.marks}
-                        defaultValue={2}
+                        // defaultValue={2}
+                        value={valueRange}
                         thumbClassName={styles.thumb}
                         trackClassName={styles.track}
                         onChange={(e) => handleGauge(e)}
                     />
                     <button onClick={() => handleChoice(choicesData[step].firstChoice)}>Je valide cette solution</button>
                 </div>
-                <img src={choicesData[step].secondChoice.img} style={{transform: `scale(${scaleRight})`}} />
+                <img src={choicesData[step].secondChoice.img} style={{ transform: `scale(${scaleRight})` }} />
             </div>
             {/* </div> */}
         </>
