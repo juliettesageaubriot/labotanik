@@ -4,23 +4,55 @@ export const sounds = [
         play: false,
         loop: false,
         path: '/assets/sounds/one-time/cats_death_bells_tears.mp3',
-        alreadyPlaying: false
+        delay: false
+    },
+    {
+        id: 'clim',
+        play: false,
+        loop: false,
+        path: '/assets/sounds/one-time/bip_clim.mp3',
+        delay: false
     },
     {
         id: 'clim',
         play: false,
         loop: true,
-        // path: [
-        //     '/assets/sounds/one-time/bip_clim_fans.mp3',
-        //     '/assets/sounds/loop/fans.mp3'],
         path: '/assets/sounds/loop/fans.mp3',
-        alreadyPlaying: false
+        delay: true
     },
     {
-        id: 'crackles',
+        id: 'clim',
         play: false,
         loop: false,
-        path: '/assets/sounds/one-time/car_crashed.mp3',
-        alreadyPlaying: false
+        path: '/assets/sounds/loop/crackle_ground.mp3',
+        delay: false
+    },
+    {
+        id: 'lux',
+        play: false,
+        loop: false,
+        path: '/assets/sounds/one-time/plant_growing.mp3',
+        delay: false
+    },
+    {
+        id: 'lux',
+        play: false,
+        loop: true,
+        path: '/assets/sounds/loop/twinkle_1.mp3',
+        delay: false
+    },
+    {
+        id: 'pollen',
+        play: false,
+        loop: false,
+        path: '/assets/sounds/one-time/atchoum.mp3',
+        delay: false
+    },
+    {
+        id: 'pollen',
+        play: false,
+        loop: true,
+        path: '/assets/sounds/loop/wind.mp3',
+        delay: false
     }
 ]
