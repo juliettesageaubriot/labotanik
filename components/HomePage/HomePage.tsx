@@ -1,10 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import { NavigationContext } from "@components/Context/NavigationProvider";
 import Link from 'next/link';
+import { sounds } from "@data/sounds";
+
 import styles from './styles.module.scss';
 
 const HomePage = () => {
-    const { userName, setUserName } = useContext(NavigationContext);
+    const { userName, setUserName, resetGame } = useContext(NavigationContext);
+    // const { step, setStep, choices, setChoices, state, setState, animationsRef, timer, soundsRef, setSoundsRef, setEndGame, resetGame } = useContext(NavigationContext);
+
+
+    useEffect(() => console.log(userName), [userName])
+
+    // console.log(step, choices, userName, state, animationsRef, timer, soundsRef)
+
+    useEffect(() => {
+        resetGame
+        sounds.map((sound: any, i: number) => {
+            sound.play = false
+        })
+    }, [])
 
     return (
         <div className={styles["home_container"]}>
@@ -27,7 +42,7 @@ const HomePage = () => {
                             </div>
                             <div className={`${styles['link-wrapper']} ${"" === userName ? styles.disabled : ''}`}>
                                 <Link href="/cinematik">
-                                    <a className={`${styles['link-content']}`}>Démarrer l'expérience &gt; </a>
+                                    <a className={`${styles['link-content']}`} onClick={resetGame}>Démarrer l'expérience &gt; </a>
                                 </Link>
                             </div>
                         </div>
