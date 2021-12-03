@@ -40,8 +40,8 @@ const HomePage = () => {
                                     onChange={(e) => setUserName(e.target.value)}
                                 />
                             </div>
-                            <div className={`${styles['link-wrapper']}`}>
-                                <Link href="/game">
+                            <div className={`${styles['link-wrapper']} ${"" === userName ? styles.disabled : ''}`}>
+                                <Link href="/cinematik">
                                     <a className={`${styles['link-content']}`} onClick={resetGame}>Démarrer l'expérience &gt; </a>
                                 </Link>
                             </div>

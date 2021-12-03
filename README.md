@@ -1,4 +1,4 @@
-# LaBotaNik'
+# Labo Tanik''
 
 First, run the development server:
 ```

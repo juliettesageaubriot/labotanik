@@ -4,7 +4,7 @@ import Layout from "@components/Layout/Layout";
 
 const Game = () => {
     return (
-        <Layout page="game" titleSEO="LaBotaNik' - Jeu">
+        <Layout page="game" titleSEO="Labo Tanik'' - Jeu">
             <GamePage />
         </Layout>
     )
