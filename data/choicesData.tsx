@@ -46,14 +46,14 @@ export const choicesData = [
             img: "/assets/img/protectifias.svg",
             // seedAnimId: "seed5",
             triggerAnims: ["plants-3"],
-            triggerSounds: [""],
+            triggerSounds: ["lux"],
         },
         secondChoice: {
             id: "lucinalis",
             img: "/assets/img/lucinalis.svg",
             // seedAnimId: "seed6",
             triggerAnims: ["plants-3"],
-            triggerSounds: [""],
+            triggerSounds: ["lux"],
         },
         // thirdChoice: {
         //     id: "serum-moins-de-50",
@@ -79,14 +79,14 @@ export const choicesData = [
             img: "/assets/img/inconnu-1.svg",
             // seedAnimId: "seed7",
             triggerAnims: ["plants-4"],
-            triggerSounds: [""],
+            triggerSounds: ["pollen"],
         },
         secondChoice: {
             id: "inconnu-2",
             img: "/assets/img/inconnu-2.svg",
             // seedAnimId: "seed8",
             triggerAnims: ["plants-4"],
-            triggerSounds: [""],
+            triggerSounds: ["pollen"],
         }
     },
 ]

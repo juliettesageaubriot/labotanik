@@ -68,24 +68,6 @@ const Actions = ({ }: IActions) => {
 
         val.triggerSounds.map((s: string) => {
             setNameStep(s)
-            // console.log(soundsRef)
-            // TODO : play sound (look at anim above for example)
-
-            // sounds.map((sound:any, i:number) => {
-            //     console.log(sound)
-            //     if(sound.loop === false) {
-            //         if(sound.play === true) {
-            //             sound.play = false
-            //         }
-            //     }
-            // })
-
-            // console.log(s)
-
-            // let soundToPlay = soundsRef.find((i) => i.id === s)
-            // soundToPlay.play = true
-
-            // console.log(s)
         })
 
         setState("RESULT")
@@ -107,7 +89,7 @@ const Actions = ({ }: IActions) => {
                 return (
                     sound.id === nameStep && sound.loop === false && state === "RESULT" &&
                     <Sound
-                        key={`sound-play-${sound.id}`}
+                        key={`sound-play-${sound.id}-${i}`}
                         soundUrl={sound.path}
                         isPlaying={true}
                         isLooping={false}
@@ -118,14 +100,25 @@ const Actions = ({ }: IActions) => {
             }
 
             {sounds?.map((sound: any, i: number) => {
-                let playSound: boolean = false;
-                if (sound.id === nameStep) sound.play = true
+                if (sound.id === nameStep) {
+
+                    sound.play = true
+
+                    if (sound.delay !== null) {
+                        setTimeout(function () {
+                            sound.play = true
+                        }, 500);
+                    } else {
+
+                    }
+                }
                 return (
                     sound.loop === true &&
                     <Sound
-                        key={`sound-play-loop-${sound.id}`}
+                        key={`sound-play-loop-${sound.id}$-${i}`}
                         soundUrl={sound.path}
                         isPlaying={sound.play}
+                        delay={sound.delay}
                         isLooping={true}
                         mute={false}
                     />
