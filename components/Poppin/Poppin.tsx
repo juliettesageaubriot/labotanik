@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NavigationContext } from "@components/Context/NavigationProvider";
+import { sounds } from "@data/sounds";
+
 import Link from 'next/link';
 
 import styles from './styles.module.scss'
@@ -13,6 +16,16 @@ interface IPoppin {
 }
 
 const Poppin = ({ icon, textAlign, content, number, size, end }: IPoppin) => {
+    const { resetGame } = useContext(NavigationContext);
+
+
+    const resetGameOnClick = () => {
+        resetGame
+        sounds.map((sound: any, i: number) => {
+            sound.play = false
+        })
+    }
+
     return (
         <div className={styles['poppin_container']}>
             <div className={styles['poppin__inner']}>
@@ -32,7 +45,7 @@ const Poppin = ({ icon, textAlign, content, number, size, end }: IPoppin) => {
                                 {!!end && <div className={styles.end}>
 
                                     <Link href="/">
-                                        <a>Quitter la partie &gt;</a>
+                                        <a onClick={resetGameOnClick}>Quitter la partie &gt;</a>
                                     </Link>
 
                                 </div>}

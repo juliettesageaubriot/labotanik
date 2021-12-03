@@ -29,7 +29,9 @@ export const NavigationContext = createContext({
   setTimer: (timer: number) => { },
 
   endGame: false,
-  setEndGame: (bool: boolean) => { }
+  setEndGame: (bool: boolean) => { },
+
+  resetGame: () => { }
 
 });
 
@@ -44,9 +46,11 @@ const NavigationProvider = (props: any) => {
   const [isSoundsRef, setIsSoundsRef] = useState<[]>([]);
   const [isTimer, setIsTimer] = useState<number>(10)
   const [isEndGame, setIsEndGame] = useState<boolean>(false)
+  // const [ResetGame, setIsResetGame] = useState<any>('')
 
   return (
     <NavigationContext.Provider value={{
+
       step: isStepState,
       setStep: (number: number) => setIsStepState(number),
 
@@ -72,10 +76,23 @@ const NavigationProvider = (props: any) => {
       setSoundsRef: (soundRef: []) => setIsSoundsRef(soundRef),
 
       timer: isTimer,
-      setTimer: (timer:number) => setIsTimer(timer),
+      setTimer: (timer: number) => setIsTimer(timer),
 
       endGame: isEndGame,
-      setEndGame: (bool:boolean) => setIsEndGame(bool)
+      setEndGame: (bool: boolean) => setIsEndGame(bool),
+
+      resetGame: () => { 
+        setIsAnimationsRef([])
+        setIsSoundsRef([])
+        setIsStepState(0)
+        setIsChoices([])
+        setIsState("RULE")
+        setIsUserName("")
+        setIsSoundGlobalVolumeState(0.5)
+        setIsMutedGlobalVolume(false)
+        setIsTimer(10)
+        setIsEndGame(false)
+      },
 
     }}>
       {props.children}
