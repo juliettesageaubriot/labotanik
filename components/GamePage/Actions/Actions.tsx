@@ -57,7 +57,7 @@ const Actions = ({ }: IActions) => {
                 case "plants-4":
                     let animToPlay4 = animationsRef.find((i) => i.fileName === "plants")
                     console.log("play plants 4")
-                    animToPlay4.playSegments([276, 325], false);
+                    animToPlay4.playSegments([276, 645], false);
                     break;
                 default:
                     let animToPlay = animationsRef.find((i) => i.fileName === a)
@@ -99,6 +99,12 @@ const Actions = ({ }: IActions) => {
         3 > step ? setStep(step + 1) : setEndGame(true)
         setState("RULE")
     }
+
+    useEffect(() => {
+        console.log("step:", step)
+        console.log("state:", state)
+        console.log("__________", "RULE" !== state && 0 === step)
+    }, [step, state])
 
     return (
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
@@ -162,19 +168,19 @@ const Actions = ({ }: IActions) => {
                 </div>
             }
 
-            {("CHOICE" === state && 0 === step) &&
+            {("RULE" !== state && 0 === step) &&
                 <Action1 handleChoice={handleChoice} />
             }
 
-            {("CHOICE" === state && 1 === step) &&
+            {("RULE" !== state && 1 === step) &&
                 <Action2 handleChoice={handleChoice} />
             }
 
-            {("CHOICE" === state && 2 === step) &&
+            {("RULE" !== state && 2 === step) &&
                 <Action3 handleChoice={handleChoice} />
             }
 
-            {("CHOICE" === state && 3 === step) &&
+            {("RULE" !== state && 3 === step) &&
                 <Action4 handleChoice={handleChoice} />
             }
         </div>
