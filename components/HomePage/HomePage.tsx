@@ -26,7 +26,7 @@ const HomePage = () => {
                                 />
                             </div>
                             <div className={`${styles['link-wrapper']} ${"" === userName ? styles.disabled : ''}`}>
-                                <Link href="/game">
+                                <Link href="/cinematik">
                                     <a className={`${styles['link-content']}`}>Démarrer l'expérience &gt; </a>
                                 </Link>
                             </div>

@@ -18,7 +18,7 @@ const Seeds = ({ }: ISeeds) => {
 
             <div className={styles.video_container}>
                 <video autoPlay loop>
-                    <source src="/assets/microscope.mp4" type="video/mp4" />
+                    <source src="/assets/videos/microscope.mp4" type="video/mp4" />
                 </video>
             </div>
 
