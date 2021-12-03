@@ -6,8 +6,6 @@ import styles from './styles.module.scss';
 const HomePage = () => {
     const { userName, setUserName } = useContext(NavigationContext);
 
-    useEffect(() => console.log(userName), [userName])
-
     return (
         <div className={styles["home_container"]}>
             <div className={styles["home__inner"]}>
@@ -27,7 +25,7 @@ const HomePage = () => {
                                     onChange={(e) => setUserName(e.target.value)}
                                 />
                             </div>
-                            <div className={`${styles['link-wrapper']}`}>
+                            <div className={`${styles['link-wrapper']} ${"" === userName ? styles.disabled : ''}`}>
                                 <Link href="/game">
                                     <a className={`${styles['link-content']}`}>Démarrer l'expérience &gt; </a>
                                 </Link>

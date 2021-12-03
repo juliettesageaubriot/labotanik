@@ -112,6 +112,13 @@
 
                     .link {
                         &-wrapper {
+                            &.disabled {
+                                opacity: .5;
+                                cursor: not-allowed;
+                                .link-content {
+                                    pointer-events: none;
+                                }
+                            }
                         }
                         &-content {
                             font-family: $font-title;

@@ -21,7 +21,7 @@ const GamePage = () => {
             </div>
             {!!endGame &&
                 <Poppin
-                    content={`${userName}, il semblerait que vous ayez <span>éradicqué l’humanité</span>.</br>
+                    content={`${!!userName ? userName + ", i" : 'I'}l semblerait que vous ayez <span>éradicqué l’humanité</span>.</br>
                             Belle prouesse technique, mais ce n’est pas ce qu’on attend de vous... </br>
                             Par conséquent, nous sommes contraint de mettre <span>fin à votre période d’essai</span>.`}
                     icon={true}
