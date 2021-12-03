@@ -3,8 +3,8 @@
 .seeds_container {
     position: relative;
     width: 100%;
-    height: 40%;
-    background-color: lightblue;
+    height: 45%;
+    background-color: $color-white;
 
     &.disabled {
         pointer-events: none;
@@ -15,6 +15,48 @@
             position: absolute;
             inset: 0;
             background-color: rgba($color-black, 0.6);
+        }
+    }
+
+    .title {
+        &_container {
+            color: $color-black;
+            padding: 15px 20px;
+            width: 100%;
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url("../../../public/assets/img/background-microscope.svg");
+            background-repeat: no-repeat;
+            background-size: auto 65px;
+            background-position-y: bottom;
+            border-top: 1px solid black;
+        }
+        &_text {
+            font-family: $font-body;
+            font-weight: $ft-medium;
+            font-size: 22px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        &_zoom {
+            font-family: $font-title;
+            font-style: normal;
+            font-weight: $ft-normal;
+            font-size: 22px;
+            letter-spacing: 0.04em;
+        }
+    }
+
+    .video_container {
+        width: 100%;
+        height: calc(100% - 63px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        video {
+            height: 100%;
         }
     }
 }

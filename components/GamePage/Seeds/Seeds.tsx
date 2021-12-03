@@ -11,10 +11,18 @@ const Seeds = ({ }: ISeeds) => {
 
     return (
         <div className={`${styles["seeds_container"]} ${"RESULT" !== state ? styles.disabled : ''}`}>
-            je suis le container des Seeds
+            <div className={styles.title_container}>
+                <span className={styles.title_text}>microscope</span>
+                <span className={styles.title_zoom}>x600</span>
+            </div>
 
-            {choices.map((i:any, idx:number) => <div key={idx}>je suis la seed combinée de l'étape {idx}, avec le choix {i.title}</div>)}
+            <div className={styles.video_container}>
+                <video autoPlay loop>
+                    <source src="/assets/videos/microscope.mp4" type="video/mp4" />
+                </video>
+            </div>
 
+            {/* {0 < choices.length && choices.map((i) => i.id + ', ')} */}
         </div>
     )
 }

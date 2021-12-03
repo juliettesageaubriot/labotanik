@@ -6,6 +6,7 @@
     height: 100%;
     background-color: black;
     overflow: hidden;
+    // border: 1px solid $color-black;
 
     &.disabled {
         pointer-events: none;
@@ -15,22 +16,58 @@
             height: 100%;
             position: absolute;
             inset: 0;
-            background-color: rgba($color-black, .6);
+            background-color: rgba($color-black, 0.6);
         }
     }
 
-    button {
+    &:before {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 200;
+        width: 20px;
+        height: 100%;
+        background-color: $color-greyLight;
+        border-top: 1px solid $color-black;
+        border-left: 1px solid $color-black;
     }
 
-    .base, .lottie-anim {
+    .title {
+        background: $color-greyLight;
+        border-left: 1px solid $color-black;
+        font-family: $font-body;
+        font-weight: $ft-medium;
+        font-size: 22px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $color-black;
+        padding: 15px 20px;
+        margin-left: 21px;
+        width: fit-content;
+        background: -webkit-linear-gradient(120deg, transparent 15px, $color-greyLight 0);
+        background-position: bottom right;
+        border-top: 1px solid $color-black;
+        z-index: 3;
+        position: absolute;
+    }
+
+    .base,
+    .lottie-anim,
+    .bubbles {
         width: 100%;
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: calc(50% + 20px);
         transform: translate(-50%, -50%);
+    }
+
+    .bubbles {
+        opacity: 0;
+        transition: 1.2s opacity ease-in-out 1s;
+
+        &.visible {
+            opacity: 1;
+            transition: 1.2s opacity ease-in-out 1s;
+        }
     }
 }
