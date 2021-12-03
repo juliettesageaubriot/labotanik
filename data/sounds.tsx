@@ -18,16 +18,16 @@ export const sounds = [
         path: '/assets/sounds/loop/crackle_ground.mp3',
     },
     {
-        id: 'lux',
-        play: false,
-        loop: false,
-        path: '/assets/sounds/one-time/plant_growing.mp3',
-    },
-    {
         id: 'clim',
         play: false,
         loop: true,
         path: '/assets/sounds/loop/fans.mp3',
+    },
+    {
+        id: 'lux',
+        play: false,
+        loop: false,
+        path: '/assets/sounds/one-time/plant_growing.mp3',
     },
     {
         id: 'lux',

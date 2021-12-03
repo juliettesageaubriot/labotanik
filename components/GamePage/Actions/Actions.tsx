@@ -92,13 +92,11 @@ const Actions = ({ }: IActions) => {
         <div className={`${styles["actions_container"]} ${"RULE" !== state && "CHOICE" !== state ? styles.disabled : ''}`}>
 
             {sounds?.map((sound: any, i: number) => {
-                if (sound.id === nameStep) {
+                if (sound.id === nameStep && sound.loop === false) {
                     sound.play = true
-                } else {
-                    sound.play = false
                 }
                 return (
-                    sound.loop === false && state === "RESULT" &&
+                    sound.id === nameStep && state === "RESULT" &&
                     <Sound
                         key={`sound-play-${sound.id}-${i}`}
                         soundUrl={sound.path}
@@ -111,10 +109,8 @@ const Actions = ({ }: IActions) => {
             }
 
             {sounds?.map((sound: any, i: number) => {
-                if (sound.id === nameStep) {
+                if (sound.id === nameStep && sound.loop === true) {
                     sound.play = true
-                } else {
-                    sound.play = false
                 }
                 return (
                     sound.loop === true &&
