@@ -4,7 +4,7 @@ import Layout from "@components/Layout/Layout";
 
 const Home = () => {
   return (
-    <Layout page="cinematik" titleSEO="Labo Tanik''">
+    <Layout page="cinematik" titleSEO="Labo Tanik'">
       <CinePage />
     </Layout>
   )
