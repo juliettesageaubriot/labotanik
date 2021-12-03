@@ -33,7 +33,7 @@ export const choicesData = [
             id: "autonomie-4",
             img: "/assets/img/autonomie-4.svg",
             // seedAnimId: "seed4",
-            triggerAnims: ["plants-2"],
+            triggerAnims: ["clim", "crackles", "plants-2"],
             triggerSounds: ["clim"],
         }
     },

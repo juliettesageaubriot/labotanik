@@ -9,26 +9,11 @@ interface ISound {
     isLooping: boolean,
     mute: boolean,
     volume?: number
-    delay?: boolean
 }
 
-
-
-const Sound = ({ soundUrl, isPlaying, isLooping, mute, volume, delay }: ISound) => {
+const Sound = ({ soundUrl, isPlaying, isLooping, mute, volume }: ISound) => {
     const { mutedGlobalVolume, soundGlobalVolume } = useContext(NavigationContext);
     const soundRef = useRef()
-
-    const [playSound, setPlaySound] = useState<boolean>(false)
-
-    // useEffect(() => {
-    //     if (delay === true) {
-    //         setTimeout(function(){
-    //             setPlaySound(isPlaying)
-    //        }, 1000);
-    //     } else {
-    //         setPlaySound(isPlaying)
-    //     }
-    // }, [delay])
 
     return (
         <>
